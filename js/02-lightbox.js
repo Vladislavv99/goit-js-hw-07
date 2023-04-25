@@ -26,5 +26,6 @@ function onImageClick(e) {
   let lightbox = new SimpleLightbox(".gallery a", {
     spinner: true,
     captionsData: "alt",
+    animationSpeed: 250,
   });
 }
