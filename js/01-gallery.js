@@ -22,8 +22,13 @@ ulList.insertAdjacentHTML("beforeend", markup);
 
 ulList.addEventListener("click", onImageClick);
 function onImageClick(e) {
+  e.preventDefault();
   if (e.target.nodeName !== "IMG") {
     return;
   }
-  console.log("hello");
+  const source = e.target.dataset.source;
+  const modalWindow = basicLightbox.create(
+    `<img src="${source}" width="800" height="600">`
+  );
+  modalWindow.show();
 }
