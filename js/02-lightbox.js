@@ -16,16 +16,8 @@ const markup = galleryItems
   .join("");
 ulList.insertAdjacentHTML("afterbegin", markup);
 
-ulList.addEventListener("click", onImageClick);
-
-function onImageClick(e) {
-  e.preventDefault();
-  if (e.target.nodeName !== "IMG") {
-    return;
-  }
-  let lightbox = new SimpleLightbox(".gallery a", {
-    spinner: true,
-    captionsData: "alt",
-    animationSpeed: 250,
-  });
-}
+let lightbox = new SimpleLightbox(".gallery a", {
+  spinner: true,
+  captionsData: "alt",
+  animationSpeed: 250,
+});
